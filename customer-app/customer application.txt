@@ -1,0 +1,23 @@
+customer application - my ideas
+
+1. scan QR attached with tables => on scanning QR.. take customer to URL: 4200/hotel/table_id
+	[as QR is not available yet.. I skip this scanning of QR part]
+
+2. on visiting URL: 4200/hotel/ => customer should see a list of tables 
+	2.1 clicking on one table should change URL to: 4200/hotel/table_id
+		- as each table should be associated with it's respective table_id
+	[Q1: use attribute directives to change URL-address, is this a best idea?]
+	
+	2.2 when clicked / selected on one of the available tables (should be a button).. update the UI with table properties and button (CALL WAITER)
+		- whenever called also change the status of that table from IDLE => CALLING (this should also reflect in UI)
+		- should update the UI with table_properties and calling button after clicked/selected a table 
+
+3. make sure that customer should not select more than one tables at a time [future implementation]
+
+4. customer should not call waiter twice => should not be able to click a call button twice
+	- future implementation: make customer to call waiter upon confirmation / wait time from waiter.. after that time customer can call again
+
+5. throttle or debounce multiple waiter calling clicks
+
+6. I DON'T HAVE ANY IDEA ABOUT THIS:
+	- offline support [from document]
