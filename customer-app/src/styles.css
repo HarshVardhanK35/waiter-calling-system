@@ -12,17 +12,3 @@ body {
   min-height: 100vh;
 }
 
-img {
-  display: block;
-  object-fit: contain;
-}
-
-h1,
-p {
-  text-align: center;
-}
-
-button {
-  font: inherit;
-}
-

@@ -1,1 +1,20 @@
-<p>table-details works!</p>
+<section id="table-details">
+  <header>
+    <h2>Table Properties</h2>
+  </header>
+
+  <app-cards>
+    @if (selectedTable$ | async; as selectedTable) {
+    <article>
+      <h2>Table {{ selectedTable.tableNumber }}</h2>
+      <p>Description: {{ selectedTable.description }}</p>
+      <p>Status: {{ selectedTable.status === "CALLING" ? "Calling Waiter.." : selectedTable.status}}</p>
+      <p class="actions">
+        <button (click)="onCallWaiter(selectedTable)" [disabled]="selectedTable.status === 'CALLING'">
+          {{selectedTable.status === "CALLING" ? "Calling waiter...": "Call waiter"}}
+        </button>
+      </p>
+    </article>
+    }
+  </app-cards>
+</section>
