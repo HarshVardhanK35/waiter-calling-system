@@ -17,9 +17,8 @@ export class TableSelectionService {
         map(tables => tables.find(t => t.tableId === id) ?? null)
       )
     )
-  );
-
+  ); 
   selectTable(tableId: string) {
-    this.selectedTableIdSubject.next(tableId);
+    this.selectedTableIdSubject.next(tableId);  
   }
 }
