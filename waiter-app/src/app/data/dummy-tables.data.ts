@@ -1,5 +1,4 @@
 import { Table } from "../models/table.model";
-
 export const DUMMY_TABLES: Table[] = [
   {
     tableId: 'T1',
@@ -38,4 +37,3 @@ export const DUMMY_TABLES: Table[] = [
     status: 'IDLE',
   }
 ];
-

@@ -1,0 +1,29 @@
+<header class="page-header">
+  <h2>Active Tables</h2>
+</header>
+
+<ul>
+  @for (table of activeTables$ | async; track table.tableId) {
+  <li>
+    <article [ngClass]="{
+          'status-idle': table.status === 'IDLE',
+          'status-calling': table.status === 'CALLING',
+          'status-acknowledged': table.status === 'ACKNOWLEDGED'
+        }">
+      <header class="table-header">
+        <h3>Table - {{ table.tableNumber }}</h3>
+        <p>{{ table.status}}</p>
+      </header>
+      <p>{{ table.description }}</p>
+
+      @if(table.status === "CALLING"){
+      <p id="actions">
+        <button (click)="onAcknowledge(table)">
+          Acknowledge
+        </button>
+      </p>
+      }
+    </article>
+  </li>
+  }
+</ul>

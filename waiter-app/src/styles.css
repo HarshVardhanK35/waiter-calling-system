@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Lato:wght@400;700&display=swap");
+@import 'ngx-toastr/toastr';
 
 * {
   box-sizing: border-box;
@@ -12,17 +13,4 @@ body {
   min-height: 100vh;
 }
 
-img {
-  display: block;
-  object-fit: contain;
-}
-
-h1,
-p {
-  text-align: center;
-}
-
-button {
-  font: inherit;
-}
 

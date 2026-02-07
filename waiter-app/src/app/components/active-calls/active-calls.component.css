@@ -1,0 +1,133 @@
+:host {
+  display: block;
+  margin: 2rem auto;
+  max-width: 40rem;
+  border-radius: 4px;
+  background-color: #44433f;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+h2 {
+  margin-top: 1rem;
+  color: #d2ccb2;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+ul {
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem;
+}
+
+article {
+  background-color: #282620;
+  padding: 01rem;
+  border-radius: 4px;
+  border-left: 8px solid transparent;
+}
+
+.status-idle {
+  border-color: #f8d63c;
+  background-color: #2d2a22;
+}
+
+.status-calling {
+  /* animation: blink 1s infinite; */
+  border-color: #3ceff8;
+  background-color: #211f1a;
+}
+
+.status-acknowledged {
+  border-color: #c484fc;
+  background-color: #39372e;
+}
+
+.table-header {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  color: #efede4;
+  margin: 0;
+}
+
+.table-header p {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 0.15rem 0.25rem;
+  color: #282620;
+  border-radius: 4px;
+}
+
+.status-idle .table-header p {
+  background-color: #f8d63c;
+}
+
+.status-calling .table-header p {
+  background-color: #3ceff8;
+}
+
+.status-acknowledged .table-header p {
+  background-color: #c484fc;
+}
+
+p {
+  text-align: left;
+  color: #c3c0b9;
+  margin: 0;
+}
+
+#actions {
+  text-align: right;
+}
+
+button {
+  font: inherit;
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #f2e090;
+  color: #2c2a21;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+button:hover,
+button:active {
+  background-color: #f3d861;
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(60, 239, 248, 0.6);
+    border-color: #3ceff8;
+  }
+
+  50% {
+    box-shadow: 0 0 12px 4px rgba(60, 239, 248, 0.8);
+    border-color: #9cf6fb;
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(60, 239, 248, 0.6);
+    border-color: #3ceff8;
+  }
+}
+
+.status-calling {
+  animation: pulseGlow 1.5s ease-in-out infinite;
+  transform-origin: center;
+}
