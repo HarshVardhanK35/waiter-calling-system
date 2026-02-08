@@ -10,6 +10,8 @@ export class TableSelectionService {
   private selectedTableIdSubject = new BehaviorSubject<string | null>(null);
   selectedTableId$ = this.selectedTableIdSubject.asObservable();
 
+
+
   selectedTable$ = this.selectedTableId$.pipe(
     filter((id): id is string => id !== null),
     switchMap(id =>

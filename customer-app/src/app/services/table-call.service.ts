@@ -24,8 +24,7 @@ export class TableCallService {
         status: 'CALLING',
         timestamp: Date.now(),
       }
-    );
-
+    )
     this.tableData.updateTableStatus(table.tableId, 'CALLING');
   }
 }
