@@ -24,7 +24,7 @@
 //     interval(2500)
 //       .pipe(takeUntil(this.stopAlarm$))
 //       .subscribe(() => {
-//         // console.log('Toast trigger...');
+//         console.log('Toast trigger...');
 //         this.toastr.warning(
 //           'A table is calling',
 //           'Waiter Call',

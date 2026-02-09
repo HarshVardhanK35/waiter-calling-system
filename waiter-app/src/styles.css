@@ -2,15 +2,14 @@
 @import 'ngx-toastr/toastr';
 
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  font-family: "Lato", serif;
-  color: #f6ecfb;
-  background: linear-gradient(#333134, #29272a);
+  font-family: "Inria Sans", Arial, sans-serif;
+  background-color: #d2cfcf;
   min-height: 100vh;
 }
-
 

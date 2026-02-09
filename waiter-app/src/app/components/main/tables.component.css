@@ -1,0 +1,123 @@
+.tables-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  width: 100%; 
+}
+
+@media (min-width: 640px) {
+  .tables-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .tables-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+}
+
+.table-card {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.table-indicator {
+  width: 10px;
+  height: 74px;
+  border-radius: 4px 0px 0px 0px;
+}
+
+.table-indicator.calling {
+  background-color: #ff383c;
+}
+
+.table-indicator.idle {
+  background-color: #34c759;
+}
+
+.table-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-end;
+  flex: 1;
+  padding: 0 4px;
+}
+
+.table-header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0 4px;
+}
+
+.table-name {
+  white-space: nowrap;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 22px;
+  color: #000000;
+}
+
+.table-status {
+  white-space: nowrap;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 15px;
+  color: #ffffff;
+  padding: 2px;
+  border-radius: 8px;
+  margin-left: 14px;
+}
+
+.table-status.calling {
+  background-color: #ff383c;
+  padding-right: 4px;
+  padding-left: 4px;
+  padding-left: 2px;
+}
+
+.table-status.idle {
+  background-color: #34c759;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 2px;
+}
+
+.acknowledge-btn {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 15px;
+  color: #000000;
+  background-color: rgba(162, 162, 162, 0.2);
+  border: none;
+  padding: 2px 10px;
+  margin-right: 8px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.acknowledge-btn:hover {
+  background-color: rgba(162, 162, 162, 0.4);
+  transform: translateY(-1px);
+}
+
+.acknowledge-btn:active {
+  transform: translateY(0);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+}
+
+.table-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}

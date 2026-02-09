@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { HeaderComponent } from "../header/header.component";
-import { ActiveCallsComponent } from "../active-calls/active-calls.component";
+
+import { SideBarComponent } from "../side-bar/side-bar.component";
+import { MainComponent } from "../main/main.component";
 
 @Component({
   selector: 'app-waiter-dashboard',
   standalone: true,
-  imports: [HeaderComponent, ActiveCallsComponent],
+  imports: [SideBarComponent, MainComponent],
   templateUrl: './waiter-dashboard.component.html',
   styleUrl: './waiter-dashboard.component.css'
 })

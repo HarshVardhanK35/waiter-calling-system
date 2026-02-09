@@ -1,4 +1,28 @@
-<header class="page-header">
+<div class="tables-grid">
+  @for (table of activeTables$ | async; track table.tableId) {
+  <div class="table-card">
+    <div class="table-indicator calling"></div>
+    <div class="table-content">
+      <div class="table-header">
+        <span class="table-name">
+          Table - {{ table.tableNumber }}
+        </span>
+
+        <span class="table-status calling">
+          CALLING
+        </span>
+      </div>
+
+      <button class="acknowledge-btn" (click)="onAcknowledge(table)">
+        ACKNOWLEDGE
+      </button>
+    </div>
+
+  </div>
+  }
+</div>
+
+<!-- <header class="page-header">
   <h2>Active Tables</h2>
 </header>
 
@@ -26,4 +50,8 @@
     </article>
   </li>
   }
-</ul>
+</ul> -->
+
+<!-- <header class="page-header">
+  <h2>Active Tables</h2>
+</header> -->

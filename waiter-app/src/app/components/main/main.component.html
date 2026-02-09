@@ -1,0 +1,78 @@
+<main class="main-content">
+  <section class="dashboard-header">
+    <div class="header-text">
+      <h1 class="dashboard-title">Dashboard</h1>
+      <p class="welcome-text">Hi, John. Welcome back to 9Dine!</p>
+    </div>
+
+    <div class="stats-container">
+      <div class="stat-card">
+        <div class="stat-content">
+          <div class="stat-number">12</div>
+          <div class="stat-label">Total Tables</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-content center">
+          <div class="stat-number center">10</div>
+          <p class="stat-label">Active Tables</p>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-content">
+          <div class="stat-number">2</div>
+          <div class="stat-label">Idle Tables</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  @let view = view$ | async;
+  @if (view === 'DASHBOARD') {
+  <section>
+    <h2 class="section-title">All tables</h2>
+    <app-tables />
+  </section>
+  }
+  @if (view === 'ACTIVE_TABLES') {
+  <section>
+    <h2 class="section-title">Active Tables</h2>
+    <app-active-tables />
+  </section>
+  }
+</main>
+
+<!-- <main class="main-content">
+  <section class="dashboard-header">
+    <div class="header-text">
+      <h1 class="dashboard-title">Dashboard</h1>
+      <p class="welcome-text">Hi, John. Welcome back to 9Dine!</p>
+    </div>
+
+    <div class="stats-container">
+      <div class="stat-card">
+        <div class="stat-content">
+          <div class="stat-number">12</div>
+          <div class="stat-label">Total Tables</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-content center">
+          <div class="stat-number center">10</div>
+          <p class="stat-label">Active Tables</p>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-content">
+          <div class="stat-number">2</div>
+          <div class="stat-label">Idle Tables</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">All tables</h2>
+    <app-tables />
+  </section>
+</main> -->

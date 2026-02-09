@@ -19,17 +19,17 @@ export class WaiterCallService {
   private tablesSubject = new BehaviorSubject<Table[]>(DUMMY_TABLES)
   tables$ = this.tablesSubject.asObservable()
 
-  // constructor() {
-  //   if (this.tablesSubject.value.some(table => table.status === 'CALLING')) {
-  //     this.alarmService.startAlarm();
-  //   }
-  // }
+
 
   callingTables$ = this.tables$.pipe(
     map(tables => tables.filter(table => table.status === "CALLING"))
   )
 
   constructor() {
+
+    // if (this.tablesSubject.value.some(table => table.status === 'CALLING')) {
+    //   this.alarmService.startAlarm();
+    // }
 
     this.storageService.init().then(async () => {
       const storedCalls = await this.storageService.getAllCalling();
@@ -97,6 +97,7 @@ export class WaiterCallService {
     );
 
     this.storageService.removeCalling(tableId);
+    // this.alarmService.stopAlarm()
   }
 }
 

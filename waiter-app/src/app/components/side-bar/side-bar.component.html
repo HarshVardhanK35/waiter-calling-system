@@ -1,0 +1,49 @@
+<!-- <aside class="sidebar"role="navigation" aria-label="Waiter navigation">
+  <div class="logo-section">
+    <div class="logo-container">
+      <div class="logo-text">
+        <div class="logo-main">9Dine</div>
+        <div class="logo-tagline">Elegant dining experience</div>
+      </div>
+      <div class="logo-indicator"></div>
+    </div>
+    <div class="divider-line"></div>
+  </div>
+
+  <nav class="sidebar-menu" role="menu">
+    <div class="menu-item active" role="menuitem" aria-current="true">
+      <img src="home.png" alt="" class="menu-icon">
+      <span class="menu-text">Dashboard</span>
+    </div>
+    <div class="menu-item" role="menuitem" >
+      <img src="/active-chairs.png" alt="" class="menu-icon">
+      <span class="menu-text">Active Tables</span>
+    </div>
+  </nav>
+</aside> -->
+
+<aside class="sidebar" role="navigation" aria-label="Waiter navigation">
+  <div class="logo-section">
+    <div class="logo-container">
+      <div class="logo-text">
+        <div class="logo-main">9Dine</div>
+        <div class="logo-tagline">Elegant dining experience</div>
+      </div>
+      <div class="logo-indicator"></div>
+    </div>
+    <div class="divider-line"></div>
+  </div>
+
+  <nav class="sidebar-menu" role="menu">
+    <button class="menu-item" [class.active]="view === 'DASHBOARD'" (click)="setView('DASHBOARD')" role="menuitem">
+      <img src="home.png" alt="" class="menu-icon">
+      <span class="menu-text">Dashboard</span>
+    </button>
+
+    <button class="menu-item" [class.active]="view === 'ACTIVE_TABLES'" (click)="setView('ACTIVE_TABLES')"
+      role="menuitem">
+      <img src="/active-chairs.png" alt="" class="menu-icon">
+      <span class="menu-text">Active Tables</span>
+    </button>
+  </nav>
+</aside>

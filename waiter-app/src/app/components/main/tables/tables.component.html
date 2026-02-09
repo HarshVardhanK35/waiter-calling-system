@@ -1,0 +1,30 @@
+<div class="tables-grid">
+  @for (table of tables$ | async; track table.tableId) {
+  <div class="table-card">
+
+    <div class="table-indicator" [ngClass]="{
+          calling: table.status === 'CALLING',
+          idle: table.status === 'IDLE',
+        }"></div>
+
+    <div class="table-content">
+      <div class="table-header">
+        <span class="table-name">Table - {{ table.tableNumber }}</span>
+
+        <span class="table-status" [ngClass]="{
+              calling: table.status === 'CALLING',
+              idle: table.status === 'IDLE',
+            }">
+          {{ table.status }}
+        </span>
+      </div>
+
+      @if (table.status === 'CALLING') {
+      <button class="acknowledge-btn" (click)="onAcknowledge(table)">
+        ACKNOWLEDGE
+      </button>
+      }
+    </div>
+  </div>
+  }
+</div>
