@@ -8,9 +8,7 @@ export class TableSelectionService {
   private tableData = inject(TableData)
 
   private selectedTableIdSubject = new BehaviorSubject<string | null>(null);
-  selectedTableId$ = this.selectedTableIdSubject.asObservable();
-
-
+  selectedTableId$ = this.selectedTableIdSubject.asObservable()
 
   selectedTable$ = this.selectedTableId$.pipe(
     filter((id): id is string => id !== null),

@@ -9,6 +9,7 @@ import { TableSelectionService } from '../../services/table-selection.service';
 import { TableCallService } from '../../services/table-call.service';
 
 import { Table } from '../../models/table.model';
+import { MqttService } from '../../services/mqtt/mqtt.service';
 
 @Component({
   standalone: true,
@@ -18,9 +19,11 @@ import { Table } from '../../models/table.model';
   styleUrl: './table-details.component.css',
 })
 export class TableDetails implements OnInit {
+  private mqttService = inject(MqttService)
   private tableSelectionService = inject(TableSelectionService);
   private tableCallService = inject(TableCallService);
 
+  mqttConnected$ = this.mqttService.connected$;
   selectedTable$ = this.tableSelectionService.selectedTable$;
 
   private callClick$ = new Subject<Table>();

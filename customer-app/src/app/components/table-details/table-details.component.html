@@ -8,11 +8,37 @@
     <article>
       <h2>Table {{ selectedTable.tableNumber }}</h2>
       <p>Description: {{ selectedTable.description }}</p>
-      <p>Status: {{ selectedTable.status === "CALLING" ? "Calling Waiter.." : selectedTable.status}}</p>
+      <p>
+        Status:
+        {{
+        selectedTable.status === 'CALLING'
+        ? 'Calling waiter...'
+        : selectedTable.status === 'ACKNOWLEDGED'
+        ? 'Acknowledged'
+        : 'Idle'
+        }}
+      </p>
+
       <p class="actions">
-        <button (click)="onCallWaiter(selectedTable)" [disabled]="selectedTable.status === 'CALLING'">
-          {{selectedTable.status === "CALLING" ? "Calling waiter...": "Call waiter"}}
+        <button (click)="onCallWaiter(selectedTable)" [disabled]="selectedTable.status === 'CALLING' || 
+            !(mqttConnected$ | async)
+          ">
+          {{
+          !(mqttConnected$ | async)
+          ? 'Connecting...'
+          : selectedTable.status === 'CALLING'
+          ? 'Calling waiter...'
+          : 'Call waiter'
+          }}
         </button>
+
+        <!-- @if (mqttConnected$ | async; as connected) {
+        <button (click)="onCallWaiter(selectedTable)" [disabled]="selectedTable.status !== 'IDLE' || !connected">
+          {{ !connected ? 'Connecting...' :
+          selectedTable.status === 'CALLING' ? 'Calling waiter...' :
+          'Call waiter' }}
+        </button>
+        } -->
       </p>
     </article>
     }

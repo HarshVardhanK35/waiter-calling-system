@@ -14,6 +14,7 @@ export class TableData {
   tables$ = this.tablesSubject.asObservable();
 
   updateTableStatus(tableId: string, status: TableStatus) {
+    // console.log('Updating table status:', tableId, status);
     const updatedTables = this.tablesSubject.value.map((table) => table.tableId === tableId ? { ...table, status: status } : table)
     this.tablesSubject.next(updatedTables)
   }

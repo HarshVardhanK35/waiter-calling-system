@@ -20,7 +20,7 @@ export class MqttService {
     });
     this.client.on('connect', () => {
       // this.clientConnectedToBroker = true
-      console.log('MQTT Connected (waiter):', clientId);
+      // console.log('MQTT Connected (waiter):', clientId);
       this.connectedSubject.next(true);
     });
     this.client.on('error', err => {
@@ -64,7 +64,7 @@ export class MqttService {
         retain
       }
     );
-    console.log('MQTT publish:', topic, payload);
+    // console.log('MQTT publish:', topic, payload);
   }
 
 }
